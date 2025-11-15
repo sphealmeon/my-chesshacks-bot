@@ -6,3 +6,4 @@ venv
 devtools
 .venv/bin
 filtered_1400plus.jsonl
+precomputed.jsonl
