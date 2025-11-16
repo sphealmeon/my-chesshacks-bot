@@ -7,6 +7,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import os
 
+import ijson
+
 def fen_to_tensor(fen_string):
     parts = fen_string.split(' ')
     piece_placement, active_color, castling_rights = parts[0], parts[1], parts[2]
@@ -40,7 +42,8 @@ class PrecomputedChessDataset(Dataset):
     def __init__(self, file_path="precomputed.jsonl"):
         self.data = []
         with open(file_path, "r") as f:
-            for line in f:
+            parser = ijson.items(f, 'item')
+            for line in parser:
                 self.data.append(json.loads(line))
 
     def __len__(self):
