@@ -1,107 +1,371 @@
-[00:00:00.786] Server  LOG      ✓ Ready in 589ms
-[00:00:03.031] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.154] Server  LOG     [devtools env] {}
-[00:00:03.233] Browser LOG     AnalysisBoardWrapper: initializing board {"playerColor":"white"}
-[00:00:03.233] Browser LOG     initAnalysisBoard: enabling play-vs-bot mode {"playerColor":"white"}
-[00:00:05.205] Server  LOG     /api/bot POST received
-[00:00:05.206] Server  LOG     Starting serve.py process {}
-[00:00:05.207] Server  LOG     Waiting for serve.py to become ready
-[00:00:05.208] Server  LOG     Checking serve.py readiness {}
-[00:00:05.209] Server  ERROR   Error checking serve.py readiness
-[00:00:05.219] Browser LOG     initAnalysisBoard: human move detected
-[00:00:05.219] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:05.411] Server  LOG     Checking serve.py readiness {}
-[00:00:05.412] Server  ERROR   Error checking serve.py readiness
-[00:00:05.613] Server  LOG     Checking serve.py readiness {}
-[00:00:05.613] Server  ERROR   Error checking serve.py readiness
-[00:00:05.815] Server  LOG     Checking serve.py readiness {}
-[00:00:05.815] Server  ERROR   Error checking serve.py readiness
-[00:00:06.017] Server  LOG     Checking serve.py readiness {}
-[00:00:06.017] Server  ERROR   Error checking serve.py readiness
-[00:00:06.218] Server  LOG     Checking serve.py readiness {}
-[00:00:06.218] Server  ERROR   Error checking serve.py readiness
-[00:00:06.420] Server  LOG     Checking serve.py readiness {}
-[00:00:06.421] Server  ERROR   Error checking serve.py readiness
-[00:00:06.445] Server  ERROR   [serve.py stderr] "INFO:     Started server process [74823]"
-[00:00:06.445] Server  ERROR   [serve.py stderr] "INFO:     Waiting for application startup.\nINFO:     Application startup complete."
-[00:00:06.445] Server  ERROR   [serve.py stderr] "INFO:     Uvicorn running on http://0.0.0.0:5058 (Press CTRL+C to quit)"
-[00:00:06.622] Server  LOG     Checking serve.py readiness {}
-[00:00:06.627] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59939 - \"POST / HTTP/1.1\" 200 OK"
-[00:00:06.627] Server  LOG     serve.py is ready
-[00:00:06.629] Server  LOG     Proxying request to serve.py /move
-[00:00:06.637] Server  LOG     [serve.py stdout] "pgn 1. e4"
-[00:00:06.680] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59940 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:06.681] Server  LOG     Received response from serve.py /move {}
-[00:00:06.785] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7f5"}
-[00:00:12.568] Server  LOG     /api/bot POST received
-[00:00:12.569] Server  LOG     Proxying request to serve.py /move
-[00:00:12.573] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5"
-[00:00:12.583] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59948 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:12.584] Server  LOG     Received response from serve.py /move {}
-[00:00:12.686] Browser LOG     initAnalysisBoard: human move detected
-[00:00:12.686] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:12.686] Browser LOG     initAnalysisBoard: applying bot move {"move":"e8f7"}
-[00:00:31.006] Server  LOG     /api/bot POST received
-[00:00:31.007] Server  LOG     Proxying request to serve.py /move
-[00:00:31.011] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+"
-[00:00:31.014] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59970 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:31.015] Server  LOG     Received response from serve.py /move {}
-[00:00:31.119] Browser LOG     initAnalysisBoard: human move detected
-[00:00:31.119] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:31.120] Browser LOG     initAnalysisBoard: applying bot move {"move":"e7e6"}
-[00:00:36.053] Server  LOG     /api/bot POST received
-[00:00:36.053] Server  LOG     Proxying request to serve.py /move
-[00:00:36.059] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+"
-[00:00:36.064] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59984 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:36.066] Server  LOG     Received response from serve.py /move {}
-[00:00:36.171] Browser LOG     initAnalysisBoard: human move detected
-[00:00:36.171] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:36.172] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7e7"}
-[00:00:42.929] Server  LOG     /api/bot POST received
-[00:00:42.930] Server  LOG     Proxying request to serve.py /move
-[00:00:42.936] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+"
-[00:00:42.940] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:59997 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:42.942] Server  LOG     Received response from serve.py /move {}
-[00:00:43.045] Browser LOG     initAnalysisBoard: human move detected
-[00:00:43.045] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:43.045] Browser LOG     initAnalysisBoard: applying bot move {"move":"e7d6"}
-[00:00:56.290] Server  LOG     /api/bot POST received
-[00:00:56.293] Server  LOG     Proxying request to serve.py /move
-[00:00:56.299] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+ Kd6 6. f7"
-[00:00:56.308] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:60016 - \"POST /move HTTP/1.1\" 200 OK"
-[00:00:56.309] Server  LOG     Received response from serve.py /move {}
-[00:00:56.413] Browser LOG     initAnalysisBoard: human move detected
-[00:00:56.413] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:00:56.413] Browser LOG     initAnalysisBoard: applying bot move {"move":"c7c5"}
-[00:01:03.406] Server  LOG     /api/bot POST received
-[00:01:03.408] Server  LOG     Proxying request to serve.py /move
-[00:01:03.415] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+ Kd6 6. f7 c5 7. Nc3"
-[00:01:03.426] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:60025 - \"POST /move HTTP/1.1\" 200 OK"
-[00:01:03.427] Server  LOG     Received response from serve.py /move {}
-[00:01:03.530] Browser LOG     initAnalysisBoard: human move detected
-[00:01:03.530] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:01:03.530] Browser LOG     initAnalysisBoard: applying bot move {"move":"d8e8"}
-[00:01:15.300] Server  LOG     /api/bot POST received
-[00:01:15.300] Server  LOG     Proxying request to serve.py /move
-[00:01:15.305] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+ Kd6 6. f7 c5 7. Nc3 Qe8 8. fxe8=Q"
-[00:01:15.315] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:60040 - \"POST /move HTTP/1.1\" 200 OK"
-[00:01:15.316] Server  LOG     Received response from serve.py /move {}
-[00:01:15.419] Browser LOG     initAnalysisBoard: human move detected
-[00:01:15.419] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:01:15.419] Browser LOG     initAnalysisBoard: applying bot move {"move":"g7g5"}
-[00:01:26.410] Server  LOG     /api/bot POST received
-[00:01:26.411] Server  LOG     Proxying request to serve.py /move
-[00:01:26.417] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+ Kd6 6. f7 c5 7. Nc3 Qe8 8. fxe8=Q g5 9. Qxf8+"
-[00:01:26.419] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:60053 - \"POST /move HTTP/1.1\" 200 OK"
-[00:01:26.420] Server  LOG     Received response from serve.py /move {}
-[00:01:26.523] Browser LOG     initAnalysisBoard: human move detected
-[00:01:26.523] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:01:26.523] Browser LOG     initAnalysisBoard: applying bot move {"move":"d6e5"}
-[00:02:10.268] Server  LOG     /api/bot POST received
-[00:02:10.271] Server  LOG     Proxying request to serve.py /move
-[00:02:10.295] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5 Kf7 3. Bc4+ e6 4. Qh5+ Ke7 5. f6+ Kd6 6. f7 c5 7. Nc3 Qe8 8. fxe8=Q g5 9. Qxf8+ Ke5 10. Nf3#"
-[00:02:10.296] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:60104 - \"POST /move HTTP/1.1\" 500 Internal Server Error"
-[00:02:10.297] Server  LOG     Received response from serve.py /move {}
-[00:02:10.401] Browser LOG     initAnalysisBoard: human move detected
-[00:02:10.401] Browser LOG     initAnalysisBoard: sending request to /api/bot
-[00:02:10.401] Browser ERROR   initAnalysisBoard: /api/bot returned non-ok {"status":500}
+[00:00:00.750] Server  LOG      ✓ Ready in 560ms
+[00:00:03.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.153] Server  LOG     [devtools env] {}
+[00:00:03.181] Browser LOG     AnalysisBoardWrapper: initializing board {"playerColor":"white"}
+[00:00:03.181] Browser LOG     initAnalysisBoard: enabling play-vs-bot mode {"playerColor":"white"}
+[00:00:07.501] Server  LOG     /api/bot POST received
+[00:00:07.502] Server  LOG     Starting serve.py process {}
+[00:00:07.505] Server  LOG     Waiting for serve.py to become ready
+[00:00:07.505] Server  LOG     Checking serve.py readiness {}
+[00:00:07.507] Server  ERROR   Error checking serve.py readiness
+[00:00:07.513] Browser LOG     initAnalysisBoard: human move detected
+[00:00:07.513] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:07.708] Server  LOG     Checking serve.py readiness {}
+[00:00:07.709] Server  ERROR   Error checking serve.py readiness
+[00:00:07.911] Server  LOG     Checking serve.py readiness {}
+[00:00:07.911] Server  ERROR   Error checking serve.py readiness
+[00:00:08.112] Server  LOG     Checking serve.py readiness {}
+[00:00:08.113] Server  ERROR   Error checking serve.py readiness
+[00:00:08.313] Server  LOG     Checking serve.py readiness {}
+[00:00:08.314] Server  ERROR   Error checking serve.py readiness
+[00:00:08.514] Server  LOG     Checking serve.py readiness {}
+[00:00:08.515] Server  ERROR   Error checking serve.py readiness
+[00:00:08.716] Server  LOG     Checking serve.py readiness {}
+[00:00:08.716] Server  ERROR   Error checking serve.py readiness
+[00:00:08.757] Server  ERROR   [serve.py stderr] "INFO:     Started server process [85767]"
+[00:00:08.757] Server  ERROR   [serve.py stderr] "INFO:     Waiting for application startup.\nINFO:     Application startup complete."
+[00:00:08.758] Server  ERROR   [serve.py stderr] "INFO:     Uvicorn running on http://0.0.0.0:5058 (Press CTRL+C to quit)"
+[00:00:08.918] Server  LOG     Checking serve.py readiness {}
+[00:00:08.920] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53554 - \"POST / HTTP/1.1\" 200 OK"
+[00:00:08.921] Server  LOG     serve.py is ready
+[00:00:08.922] Server  LOG     Proxying request to serve.py /move
+[00:00:08.928] Server  LOG     [serve.py stdout] "pgn 1. e4"
+[00:00:08.969] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53555 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:08.970] Server  LOG     Received response from serve.py /move {}
+[00:00:09.074] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7f6"}
+[00:00:12.433] Server  LOG     /api/bot POST received
+[00:00:12.434] Server  LOG     Proxying request to serve.py /move
+[00:00:12.438] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4"
+[00:00:12.449] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53555 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:12.450] Server  LOG     Received response from serve.py /move {}
+[00:00:12.554] Browser LOG     initAnalysisBoard: human move detected
+[00:00:12.554] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:12.554] Browser LOG     initAnalysisBoard: applying bot move {"move":"e8f7"}
+[00:00:39.000] Server  LOG     /api/bot POST received
+[00:00:39.002] Server  LOG     Proxying request to serve.py /move
+[00:00:39.011] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4"
+[00:00:39.020] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53596 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:39.020] Server  LOG     Received response from serve.py /move {}
+[00:00:39.124] Browser LOG     initAnalysisBoard: human move detected
+[00:00:39.124] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:39.124] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7e6"}
+[00:00:42.812] Server  LOG     /api/bot POST received
+[00:00:42.813] Server  LOG     Proxying request to serve.py /move
+[00:00:42.818] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4"
+[00:00:42.827] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53596 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:42.828] Server  LOG     Received response from serve.py /move {}
+[00:00:42.931] Browser LOG     initAnalysisBoard: human move detected
+[00:00:42.931] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:42.931] Browser LOG     initAnalysisBoard: applying bot move {"move":"h7h6"}
+[00:00:45.793] Server  LOG     /api/bot POST received
+[00:00:45.794] Server  LOG     Proxying request to serve.py /move
+[00:00:45.799] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4"
+[00:00:45.805] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53596 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:45.806] Server  LOG     Received response from serve.py /move {}
+[00:00:45.912] Browser LOG     initAnalysisBoard: human move detected
+[00:00:45.912] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:45.912] Browser LOG     initAnalysisBoard: applying bot move {"move":"d7d6"}
+[00:00:49.225] Server  LOG     /api/bot POST received
+[00:00:49.226] Server  LOG     Proxying request to serve.py /move
+[00:00:49.230] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3"
+[00:00:49.240] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53596 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:49.241] Server  LOG     Received response from serve.py /move {}
+[00:00:49.345] Browser LOG     initAnalysisBoard: human move detected
+[00:00:49.345] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:49.345] Browser LOG     initAnalysisBoard: applying bot move {"move":"b7b6"}
+[00:00:53.828] Server  LOG     /api/bot POST received
+[00:00:53.830] Server  LOG     Proxying request to serve.py /move
+[00:00:53.838] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3"
+[00:00:53.847] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53634 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:53.848] Server  LOG     Received response from serve.py /move {}
+[00:00:53.952] Browser LOG     initAnalysisBoard: human move detected
+[00:00:53.952] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:53.952] Browser LOG     initAnalysisBoard: applying bot move {"move":"b8a6"}
+[00:00:57.329] Server  LOG     /api/bot POST received
+[00:00:57.330] Server  LOG     Proxying request to serve.py /move
+[00:00:57.334] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2"
+[00:00:57.345] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53634 - \"POST /move HTTP/1.1\" 200 OK"
+[00:00:57.346] Server  LOG     Received response from serve.py /move {}
+[00:00:57.450] Browser LOG     initAnalysisBoard: human move detected
+[00:00:57.450] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:00:57.450] Browser LOG     initAnalysisBoard: applying bot move {"move":"f6f5"}
+[00:01:00.345] Server  LOG     /api/bot POST received
+[00:01:00.347] Server  LOG     Proxying request to serve.py /move
+[00:01:00.352] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3"
+[00:01:00.359] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53634 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:00.360] Server  LOG     Received response from serve.py /move {}
+[00:01:00.463] Browser LOG     initAnalysisBoard: human move detected
+[00:01:00.464] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:00.464] Browser LOG     initAnalysisBoard: applying bot move {"move":"h6h5"}
+[00:01:02.273] Server  LOG     /api/bot POST received
+[00:01:02.274] Server  LOG     Proxying request to serve.py /move
+[00:01:02.277] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5"
+[00:01:02.288] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53634 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:02.288] Server  LOG     Received response from serve.py /move {}
+[00:01:02.392] Browser LOG     initAnalysisBoard: human move detected
+[00:01:02.392] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:02.392] Browser LOG     initAnalysisBoard: applying bot move {"move":"d6d5"}
+[00:01:22.310] Server  LOG     /api/bot POST received
+[00:01:22.311] Server  LOG     Proxying request to serve.py /move
+[00:01:22.319] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5"
+[00:01:22.327] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53666 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:22.329] Server  LOG     Received response from serve.py /move {}
+[00:01:22.433] Browser LOG     initAnalysisBoard: human move detected
+[00:01:22.433] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:22.433] Browser LOG     initAnalysisBoard: applying bot move {"move":"e6d7"}
+[00:01:24.457] Server  LOG     /api/bot POST received
+[00:01:24.458] Server  LOG     Proxying request to serve.py /move
+[00:01:24.462] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2"
+[00:01:24.471] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53666 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:24.472] Server  LOG     Received response from serve.py /move {}
+[00:01:24.575] Browser LOG     initAnalysisBoard: human move detected
+[00:01:24.575] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:24.575] Browser LOG     initAnalysisBoard: applying bot move {"move":"c8b7"}
+[00:01:26.563] Server  LOG     /api/bot POST received
+[00:01:26.564] Server  LOG     Proxying request to serve.py /move
+[00:01:26.568] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+"
+[00:01:26.573] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53666 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:26.573] Server  LOG     Received response from serve.py /move {}
+[00:01:26.677] Browser LOG     initAnalysisBoard: human move detected
+[00:01:26.677] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:26.677] Browser LOG     initAnalysisBoard: applying bot move {"move":"d7e6"}
+[00:01:38.992] Server  LOG     /api/bot POST received
+[00:01:38.993] Server  LOG     Proxying request to serve.py /move
+[00:01:39.000] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3"
+[00:01:39.010] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:39.011] Server  LOG     Received response from serve.py /move {}
+[00:01:39.113] Browser LOG     initAnalysisBoard: human move detected
+[00:01:39.113] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:39.113] Browser LOG     initAnalysisBoard: applying bot move {"move":"b6b5"}
+[00:01:41.087] Server  LOG     /api/bot POST received
+[00:01:41.087] Server  LOG     Proxying request to serve.py /move
+[00:01:41.091] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4"
+[00:01:41.105] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:41.105] Server  LOG     Received response from serve.py /move {}
+[00:01:41.209] Browser LOG     initAnalysisBoard: human move detected
+[00:01:41.209] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:41.209] Browser LOG     initAnalysisBoard: applying bot move {"move":"a6b8"}
+[00:01:42.855] Server  LOG     /api/bot POST received
+[00:01:42.855] Server  LOG     Proxying request to serve.py /move
+[00:01:42.859] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+"
+[00:01:42.866] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:42.867] Server  LOG     Received response from serve.py /move {}
+[00:01:42.970] Browser LOG     initAnalysisBoard: human move detected
+[00:01:42.970] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:42.970] Browser LOG     initAnalysisBoard: applying bot move {"move":"e6f7"}
+[00:01:44.214] Server  LOG     /api/bot POST received
+[00:01:44.214] Server  LOG     Proxying request to serve.py /move
+[00:01:44.219] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7"
+[00:01:44.231] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:44.231] Server  LOG     Received response from serve.py /move {}
+[00:01:44.334] Browser LOG     initAnalysisBoard: human move detected
+[00:01:44.334] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:44.334] Browser LOG     initAnalysisBoard: applying bot move {"move":"d8e8"}
+[00:01:46.043] Server  LOG     /api/bot POST received
+[00:01:46.044] Server  LOG     Proxying request to serve.py /move
+[00:01:46.049] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8"
+[00:01:46.061] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:46.062] Server  LOG     Received response from serve.py /move {}
+[00:01:46.165] Browser LOG     initAnalysisBoard: human move detected
+[00:01:46.166] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:46.166] Browser LOG     initAnalysisBoard: applying bot move {"move":"h8h6"}
+[00:01:48.477] Server  LOG     /api/bot POST received
+[00:01:48.478] Server  LOG     Proxying request to serve.py /move
+[00:01:48.482] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+"
+[00:01:48.484] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53687 - \"POST /move HTTP/1.1\" 200 OK"
+[00:01:48.485] Server  LOG     Received response from serve.py /move {}
+[00:01:48.588] Browser LOG     initAnalysisBoard: human move detected
+[00:01:48.588] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:01:48.588] Browser LOG     initAnalysisBoard: applying bot move {"move":"h6e6"}
+[00:02:05.465] Server  LOG     /api/bot POST received
+[00:02:05.466] Server  LOG     Proxying request to serve.py /move
+[00:02:05.473] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4"
+[00:02:05.486] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53720 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:05.487] Server  LOG     Received response from serve.py /move {}
+[00:02:05.591] Browser LOG     initAnalysisBoard: human move detected
+[00:02:05.591] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:05.591] Browser LOG     initAnalysisBoard: applying bot move {"move":"e8d7"}
+[00:02:10.071] Server  LOG     /api/bot POST received
+[00:02:10.072] Server  LOG     Proxying request to serve.py /move
+[00:02:10.079] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6"
+[00:02:10.090] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53725 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:10.091] Server  LOG     Received response from serve.py /move {}
+[00:02:10.196] Browser LOG     initAnalysisBoard: human move detected
+[00:02:10.196] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:10.196] Browser LOG     initAnalysisBoard: applying bot move {"move":"e6e5"}
+[00:02:23.381] Server  LOG     /api/bot POST received
+[00:02:23.382] Server  LOG     Proxying request to serve.py /move
+[00:02:23.387] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2"
+[00:02:23.407] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53740 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:23.408] Server  LOG     Received response from serve.py /move {}
+[00:02:23.511] Browser LOG     initAnalysisBoard: human move detected
+[00:02:23.511] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:23.511] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a6"}
+[00:02:28.053] Server  LOG     /api/bot POST received
+[00:02:28.053] Server  LOG     Proxying request to serve.py /move
+[00:02:28.060] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4"
+[00:02:28.068] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53747 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:28.069] Server  LOG     Received response from serve.py /move {}
+[00:02:28.171] Browser LOG     initAnalysisBoard: human move detected
+[00:02:28.171] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:28.171] Browser LOG     initAnalysisBoard: applying bot move {"move":"g8h6"}
+[00:02:29.650] Server  LOG     /api/bot POST received
+[00:02:29.651] Server  LOG     Proxying request to serve.py /move
+[00:02:29.655] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+"
+[00:02:29.661] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53747 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:29.662] Server  LOG     Received response from serve.py /move {}
+[00:02:29.766] Browser LOG     initAnalysisBoard: human move detected
+[00:02:29.766] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:29.766] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7e6"}
+[00:02:33.967] Server  LOG     /api/bot POST received
+[00:02:33.968] Server  LOG     Proxying request to serve.py /move
+[00:02:33.974] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8"
+[00:02:33.981] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:33.982] Server  LOG     Received response from serve.py /move {}
+[00:02:34.086] Browser LOG     initAnalysisBoard: human move detected
+[00:02:34.086] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:34.086] Browser LOG     initAnalysisBoard: applying bot move {"move":"h5h4"}
+[00:02:36.508] Server  LOG     /api/bot POST received
+[00:02:36.509] Server  LOG     Proxying request to serve.py /move
+[00:02:36.513] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6"
+[00:02:36.525] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:36.526] Server  LOG     Received response from serve.py /move {}
+[00:02:36.629] Browser LOG     initAnalysisBoard: human move detected
+[00:02:36.629] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:36.629] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:38.115] Server  LOG     /api/bot POST received
+[00:02:38.116] Server  LOG     Proxying request to serve.py /move
+[00:02:38.120] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8"
+[00:02:38.126] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:38.127] Server  LOG     Received response from serve.py /move {}
+[00:02:38.230] Browser LOG     initAnalysisBoard: human move detected
+[00:02:38.230] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:38.230] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:38.993] Server  LOG     /api/bot POST received
+[00:02:38.994] Server  LOG     Proxying request to serve.py /move
+[00:02:39.002] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6"
+[00:02:39.012] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:39.013] Server  LOG     Received response from serve.py /move {}
+[00:02:39.116] Browser LOG     initAnalysisBoard: human move detected
+[00:02:39.116] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:39.116] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:39.848] Server  LOG     /api/bot POST received
+[00:02:39.849] Server  LOG     Proxying request to serve.py /move
+[00:02:39.853] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8"
+[00:02:39.862] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:39.862] Server  LOG     Received response from serve.py /move {}
+[00:02:39.965] Browser LOG     initAnalysisBoard: human move detected
+[00:02:39.965] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:39.965] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:40.543] Server  LOG     /api/bot POST received
+[00:02:40.544] Server  LOG     Proxying request to serve.py /move
+[00:02:40.549] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6"
+[00:02:40.559] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:40.559] Server  LOG     Received response from serve.py /move {}
+[00:02:40.662] Browser LOG     initAnalysisBoard: human move detected
+[00:02:40.662] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:40.662] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:41.995] Server  LOG     /api/bot POST received
+[00:02:41.996] Server  LOG     Proxying request to serve.py /move
+[00:02:42.001] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8"
+[00:02:42.011] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:42.012] Server  LOG     Received response from serve.py /move {}
+[00:02:42.115] Browser LOG     initAnalysisBoard: human move detected
+[00:02:42.115] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:42.115] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:43.271] Server  LOG     /api/bot POST received
+[00:02:43.272] Server  LOG     Proxying request to serve.py /move
+[00:02:43.278] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6"
+[00:02:43.288] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:43.290] Server  LOG     Received response from serve.py /move {}
+[00:02:43.393] Browser LOG     initAnalysisBoard: human move detected
+[00:02:43.393] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:43.393] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:44.455] Server  LOG     /api/bot POST received
+[00:02:44.455] Server  LOG     Proxying request to serve.py /move
+[00:02:44.461] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8"
+[00:02:44.471] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:44.472] Server  LOG     Received response from serve.py /move {}
+[00:02:44.575] Browser LOG     initAnalysisBoard: human move detected
+[00:02:44.575] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:44.575] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:45.376] Server  LOG     /api/bot POST received
+[00:02:45.377] Server  LOG     Proxying request to serve.py /move
+[00:02:45.383] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6"
+[00:02:45.392] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:45.393] Server  LOG     Received response from serve.py /move {}
+[00:02:45.497] Browser LOG     initAnalysisBoard: human move detected
+[00:02:45.497] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:45.497] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:46.204] Server  LOG     /api/bot POST received
+[00:02:46.205] Server  LOG     Proxying request to serve.py /move
+[00:02:46.211] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8"
+[00:02:46.221] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:46.221] Server  LOG     Received response from serve.py /move {}
+[00:02:46.325] Browser LOG     initAnalysisBoard: human move detected
+[00:02:46.325] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:46.325] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:47.089] Server  LOG     /api/bot POST received
+[00:02:47.090] Server  LOG     Proxying request to serve.py /move
+[00:02:47.096] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6"
+[00:02:47.107] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:47.108] Server  LOG     Received response from serve.py /move {}
+[00:02:47.211] Browser LOG     initAnalysisBoard: human move detected
+[00:02:47.211] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:47.211] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:49.413] Server  LOG     /api/bot POST received
+[00:02:49.414] Server  LOG     Proxying request to serve.py /move
+[00:02:49.421] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6 Ra7 37. Ne8"
+[00:02:49.431] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:49.432] Server  LOG     Received response from serve.py /move {}
+[00:02:49.536] Browser LOG     initAnalysisBoard: human move detected
+[00:02:49.536] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:49.536] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:50.212] Server  LOG     /api/bot POST received
+[00:02:50.213] Server  LOG     Proxying request to serve.py /move
+[00:02:50.218] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6 Ra7 37. Ne8 Ra8 38. Nf6"
+[00:02:50.225] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:50.227] Server  LOG     Received response from serve.py /move {}
+[00:02:50.329] Browser LOG     initAnalysisBoard: human move detected
+[00:02:50.329] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:50.329] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:02:50.971] Server  LOG     /api/bot POST received
+[00:02:50.972] Server  LOG     Proxying request to serve.py /move
+[00:02:50.978] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6 Ra7 37. Ne8 Ra8 38. Nf6 Ra7 39. Ne8"
+[00:02:50.987] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:50.988] Server  LOG     Received response from serve.py /move {}
+[00:02:51.090] Browser LOG     initAnalysisBoard: human move detected
+[00:02:51.091] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:51.091] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:02:51.731] Server  LOG     /api/bot POST received
+[00:02:51.733] Server  LOG     Proxying request to serve.py /move
+[00:02:51.739] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6 Ra7 37. Ne8 Ra8 38. Nf6 Ra7 39. Ne8 Ra8 40. Nd6"
+[00:02:51.747] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53754 - \"POST /move HTTP/1.1\" 200 OK"
+[00:02:51.748] Server  LOG     Received response from serve.py /move {}
+[00:02:51.851] Browser LOG     initAnalysisBoard: human move detected
+[00:02:51.851] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:02:51.851] Browser LOG     initAnalysisBoard: applying bot move {"move":"a8a7"}
+[00:03:12.324] Server  LOG     /api/bot POST received
+[00:03:12.325] Server  LOG     Proxying request to serve.py /move
+[00:03:12.332] Server  LOG     [serve.py stdout] "pgn 1. e4 f6 2. d4 Kf7 3. c4 Ke6 4. f4 h6 5. g4 d6 6. Nc3 b6 7. Nf3 Na6 8. Bg2 f5 9. h3 h5 10. g5 d5 11. c5 Kd7 12. Ke2 Bb7 13. c6+ Ke6 14. Qb3 b5 15. Qb4 Nb8 16. Qd6+ Kf7 17. Qd7 Qe8 18. Qc8 Rh6 19. Qe6+ Rxe6 20. Na4 Qd7 21. Nb6 Re5 22. Bd2 a6 23. Nc4 Nh6 24. Nd6+ Ke6 25. Ne8 h4 26. Nf6 Ra7 27. Ne8 Ra8 28. Nd6 Ra7 29. Ne8 Ra8 30. Nf6 Ra7 31. Ne8 Ra8 32. Nd6 Ra7 33. Ne8 Ra8 34. Nf6 Ra7 35. Ne8 Ra8 36. Nd6 Ra7 37. Ne8 Ra8 38. Nf6 Ra7 39. Ne8 Ra8 40. Nd6 Ra7 41. Ne8"
+[00:03:12.341] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53797 - \"POST /move HTTP/1.1\" 200 OK"
+[00:03:12.342] Server  LOG     Received response from serve.py /move {}
+[00:03:12.445] Browser LOG     initAnalysisBoard: human move detected
+[00:03:12.445] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:03:12.445] Browser LOG     initAnalysisBoard: applying bot move {"move":"a7a8"}
+[00:03:16.790] Server  LOG     /api/bot POST received
+[00:03:16.791] Server  LOG     Proxying request to serve.py /move
+[00:03:16.801] Server  LOG     [serve.py stdout] "pgn 1. e4"
+[00:03:16.821] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53803 - \"POST /move HTTP/1.1\" 200 OK"
+[00:03:16.822] Server  LOG     Received response from serve.py /move {}
+[00:03:16.926] Browser LOG     initAnalysisBoard: human move detected
+[00:03:16.926] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:03:16.926] Browser LOG     initAnalysisBoard: applying bot move {"move":"f7f5"}
+[00:03:21.371] Server  LOG     /api/bot POST received
+[00:03:21.371] Server  LOG     Proxying request to serve.py /move
+[00:03:21.377] Server  LOG     [serve.py stdout] "pgn 1. e4 f5 2. exf5"
+[00:03:21.386] Server  LOG     [serve.py stdout] "INFO:     127.0.0.1:53809 - \"POST /move HTTP/1.1\" 200 OK"
+[00:03:21.387] Server  LOG     Received response from serve.py /move {}
+[00:03:21.490] Browser LOG     initAnalysisBoard: human move detected
+[00:03:21.490] Browser LOG     initAnalysisBoard: sending request to /api/bot
+[00:03:21.490] Browser LOG     initAnalysisBoard: applying bot move {"move":"e8f7"}

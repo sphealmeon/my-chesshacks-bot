@@ -7,7 +7,7 @@ from datasets import load_dataset
 
 STOCKFISH_PATH = "engines/stockfish"  # ensure executable
 OUT_PATH = "precomputed.jsonl"
-FEN_LIMIT = 5000_000                # full run size
+FEN_LIMIT = 20_000_000                # full run size
 DEPTH = 1                              # eval depth (1 is fastest)
 CHUNKSIZE = 256
 

@@ -92,13 +92,13 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
             if step % 50 == 0:
                 print(f"Epoch {epoch}, Step {step}, Loss {loss.item():.4f}")
 
-    # ------------------------------
-    # SAVE MODEL AT END OF TRAINING
-    # ------------------------------
     project_root = os.path.dirname(os.path.abspath(__file__))
     model_path = os.path.join(project_root, "model.pth")
 
     torch.save(model.state_dict(), model_path)
 
 def main():
-    train(batch_size=32).map(25)
+    train(batch_size=32, epochs=1)
+
+if __name__ == "__main__":
+    main()
