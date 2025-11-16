@@ -4,6 +4,11 @@ from stockfish import Stockfish
 import os
 import numpy as np
 
+import modal
+image = image = modal.Image.debian_slim().pip_install(open("../requirements.txt", "r").read().split('\n'))
+app = modal.App("chesshacks-precompute", image=image)
+
+@app.function() # Outsource to Modal
 def load_stockfish():
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     stockfish_path = os.path.join(project_root, "engines", "stockfish")
@@ -13,6 +18,7 @@ def load_stockfish():
     sf.update_engine_parameters({"MultiPV": 1})
     return sf
 
+@app.function() # Outsource to Modal
 def get_best_centipawn(fen, sf):
     sf.set_fen_position(fen)
     result = sf.get_top_moves(1)
@@ -24,6 +30,7 @@ def get_best_centipawn(fen, sf):
     return cp
 
 # Precompute and save to reduce stockfish calls
+@app.function() # Outsource to Modal
 def precompute(output_file="precomputed.jsonl", max_rows=5000):
     dataset = load_dataset("jrahn/yolochess_lichess-elite_2211", split="train", streaming=True)
     sf = load_stockfish()
@@ -45,5 +52,6 @@ def precompute(output_file="precomputed.jsonl", max_rows=5000):
                 break
     print(f"Finished {count} positions, saved to {output_file}")
 
-if __name__ == "__main__":
-    precompute(max_rows=500000)  # adjust max_rows for your testing
+@app.local_entrypoint() # Modal entrypoint
+def main():
+    precompute(max_rows=1000)  # adjust max_rows for your testing

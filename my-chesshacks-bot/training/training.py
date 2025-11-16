@@ -11,8 +11,8 @@ import ijson
 
 import modal
 
-image = image = modal.Image.debian_slim().pip_install(open("requirements.txt", "r").read().split('\n'))
-app = modal.App("chesshacks", image=image)
+image = image = modal.Image.debian_slim().pip_install(open("../requirements.txt", "r").read().split('\n'))
+app = modal.App("chesshacks-training", image=image)
 
 @app.function() # Outsource to Modal
 def fen_to_tensor(fen_string):
