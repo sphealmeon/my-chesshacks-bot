@@ -43,7 +43,6 @@ class PrecomputedChessDataset(Dataset):
             for line in f:
                 self.data.append(json.loads(line))
 
-
     def __len__(self):
         return len(self.data)
 
@@ -101,5 +100,5 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
 
     torch.save(model.state_dict(), model_path)
 
-if __name__ == "__main__":
-    train(batch_size=32)
+def main():
+    train(batch_size=32).map(25)
