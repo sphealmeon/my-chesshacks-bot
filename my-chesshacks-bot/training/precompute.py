@@ -4,6 +4,9 @@ from stockfish import Stockfish
 import os
 import numpy as np
 
+from weightCalc import weight
+from gameAnalysis import identifyGame
+
 # import modal
 # image = image = modal.Image.debian_slim().pip_install(open("../requirements.txt", "r").read().split('\n'))
 # app = modal.App("chesshacks-precompute", image=image)
@@ -32,17 +35,16 @@ def get_best_centipawn(fen, sf):
 # Precompute and save to reduce stockfish calls
 # @app.function() # Outsource to Modal
 def precompute(output_file="precomputed.jsonl", max_rows=5000):
-    dataset = load_dataset("jrahn/yolochess_lichess-elite_2211", split="train", streaming=True)
+    dataset = load_dataset("bonna46/Chess-FEN-and-NL-Format-30K-Dataset", split="train", streaming=True)
     sf = load_stockfish()
     
     count = 0
     with open(output_file, "w") as f:
         for row in dataset:
             fen = row["fen"]
-            cp = get_best_centipawn(fen, sf)
-            # optional: normalize / clamp
-            cp = np.clip(cp, -1000, 1000) / 1000.0
-            json_line = json.dumps({"fen": fen, "cp": cp})
+            gameStatus = identifyGame(fen)
+            cp = weight(fen, gameStatus)
+            json_line = json.dumps({"fen": fen, "cp": cp, "gameStatus": gameStatus})
             f.write(json_line + "\n")
             
             count += 1
