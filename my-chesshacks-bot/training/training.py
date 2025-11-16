@@ -7,8 +7,6 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import os
 
-import ijson
-
 def fen_to_tensor(fen_string):
     parts = fen_string.split(' ')
     piece_placement, active_color, castling_rights = parts[0], parts[1], parts[2]
@@ -39,12 +37,12 @@ def fen_to_tensor(fen_string):
     return tensor
 
 class PrecomputedChessDataset(Dataset):
-    def __init__(self, file_path="precomputed.jsonl"):
+    def __init__(self, path):
         self.data = []
-        with open(file_path, "r") as f:
-            parser = ijson.items(f, 'item')
-            for line in parser:
+        with open(path) as f:
+            for line in f:
                 self.data.append(json.loads(line))
+
 
     def __len__(self):
         return len(self.data)
@@ -83,7 +81,7 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
 
     model = ChessValueNet()
     opt = torch.optim.Adam(model.parameters(), lr=1e-4)
-    loss_fn = nn.MarginRankingLoss() # Changed to margin ranking to rank moves
+    loss_fn = nn.MSELoss() # Changed to margin ranking to rank moves
 
     for epoch in range(epochs):
         for step, (x, y) in enumerate(dl):
