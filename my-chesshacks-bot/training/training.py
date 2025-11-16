@@ -48,9 +48,8 @@ class PrecomputedChessDataset(Dataset):
     # @app.function() # Outsource to Modal
     def __init__(self, file_path="precomputed.jsonl"):
         self.data = []
-        with open(file_path, "r") as f:
-            parser = ijson.items(f, 'item')
-            for line in parser:
+        with open(path) as f:
+            for line in f:
                 self.data.append(json.loads(line))
 
     # @app.function() # Outsource to Modal
@@ -109,14 +108,13 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
             if step % 50 == 0:
                 print(f"Epoch {epoch}, Step {step}, Loss {loss.item():.4f}")
 
-    # ------------------------------
-    # SAVE MODEL AT END OF TRAINING
-    # ------------------------------
     project_root = os.path.dirname(os.path.abspath(__file__))
     model_path = os.path.join(project_root, "model.pth")
 
     torch.save(model.state_dict(), model_path)
 
-# @app.local_entrypoint() # Modal entrypoint
 def main():
-    train(batch_size=32)
+    train(batch_size=32, epochs=1)
+
+if __name__ == "__main__":
+    main()
