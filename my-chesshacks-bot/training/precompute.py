@@ -23,7 +23,7 @@ STOCKFISH_PATH = os.path.join(
 DEPTH = 8   # or whatever depth you want
 
 # Number of FENs to precompute 
-FEN_LIMIT = 5000000   # adjust as needed
+FEN_LIMIT = 2000000   # adjust as needed
 
 # Output file for the results
 OUT_PATH = "precomputed_stockfish.jsonl"
@@ -55,12 +55,7 @@ def weight(fen: str, gameStatus: str) -> int:
     cpFinal = SF.get_top_moves(1)[0]["Centipawn"] # New centipawn
     if cpFinal == None:
         cpFinal = 0 # Must be stalemate
-
-    playerToMove = fen.split(" ")[1] # "w" or "b" from original board state
-    if playerToMove == "w": # Difference in centipawn depends on who the move was made for
-        cp = cpFinal - cpInitial
-    else:
-        cp = cpInitial - cpFinal
+    cp = cpFinal - cpInitial # Capture difference in centipawn
 
     # Tuning values based on game status (EXPERIMENTAL)
     if gameStatus == "opening":

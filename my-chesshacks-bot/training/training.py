@@ -44,7 +44,7 @@ def fen_to_tensor(fen_string):
     return tensor
 
 class PrecomputedChessDataset(Dataset):
-    def __init__(self, file_path="precomputed.jsonl"):
+    def __init__(self, file_path="precomputed_stockfish.jsonl"):
         self.data = []
         with open(file_path) as f:
             for line in f:
@@ -55,8 +55,10 @@ class PrecomputedChessDataset(Dataset):
 
     def __getitem__(self, idx):
         row = self.data[idx]
-        x = fen_to_tensor(row["fen"])
+        fen = row["fen"]
+        x = fen_to_tensor(fen)
         y = row["cp"]
+        parseFen = fen.split(" ")
         x = torch.tensor(x, dtype=torch.float32)
         y = torch.tensor(y, dtype=torch.float32).unsqueeze(-1)
         return x, y
@@ -81,7 +83,7 @@ class ChessValueNet(nn.Module):
         x = self.fc(x)
         return x
 
-def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
+def train(file_path="precomputed_stockfish.jsonl", batch_size=32, epochs=1):
     ds = PrecomputedChessDataset(file_path)
     dl = DataLoader(ds, batch_size=batch_size, shuffle=True)
 
