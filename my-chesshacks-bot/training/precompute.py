@@ -46,4 +46,4 @@ def precompute(output_file="precomputed.jsonl", max_rows=5000):
     print(f"Finished {count} positions, saved to {output_file}")
 
 if __name__ == "__main__":
-    precompute(max_rows=5000)  # adjust max_rows for your testing
+    precompute(max_rows=500000)  # adjust max_rows for your testing

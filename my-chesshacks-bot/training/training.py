@@ -5,6 +5,7 @@ import json
 import numpy as np
 import torch.nn as nn
 from torch.utils.data import DataLoader
+import os
 
 def fen_to_tensor(fen_string):
     parts = fen_string.split(' ')
@@ -90,6 +91,14 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
             opt.step()
             if step % 50 == 0:
                 print(f"Epoch {epoch}, Step {step}, Loss {loss.item():.4f}")
+
+    # ------------------------------
+    # SAVE MODEL AT END OF TRAINING
+    # ------------------------------
+    project_root = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(project_root, "model.pth")
+
+    torch.save(model.state_dict(), model_path)
 
 if __name__ == "__main__":
     train(batch_size=32)
