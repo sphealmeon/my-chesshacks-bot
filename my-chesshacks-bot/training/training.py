@@ -83,7 +83,7 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
 
     model = ChessValueNet()
     opt = torch.optim.Adam(model.parameters(), lr=1e-4)
-    loss_fn = nn.MSELoss()
+    loss_fn = nn.MarginRankingLoss() # Changed to margin ranking to rank moves
 
     for epoch in range(epochs):
         for step, (x, y) in enumerate(dl):
