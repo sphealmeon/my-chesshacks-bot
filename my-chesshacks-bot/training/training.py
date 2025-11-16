@@ -9,6 +9,12 @@ import os
 
 import ijson
 
+import modal
+
+image = image = modal.Image.debian_slim().pip_install(open("requirements.txt", "r").read().split('\n'))
+app = modal.App("chesshacks", image=image)
+
+@app.function() # Outsource to Modal
 def fen_to_tensor(fen_string):
     parts = fen_string.split(' ')
     piece_placement, active_color, castling_rights = parts[0], parts[1], parts[2]
@@ -39,6 +45,7 @@ def fen_to_tensor(fen_string):
     return tensor
 
 class PrecomputedChessDataset(Dataset):
+    @app.function() # Outsource to Modal
     def __init__(self, file_path="precomputed.jsonl"):
         self.data = []
         with open(file_path, "r") as f:
@@ -46,9 +53,11 @@ class PrecomputedChessDataset(Dataset):
             for line in parser:
                 self.data.append(json.loads(line))
 
+    @app.function() # Outsource to Modal
     def __len__(self):
         return len(self.data)
 
+    @app.function() # Outsource to Modal
     def __getitem__(self, idx):
         row = self.data[idx]
         x = fen_to_tensor(row["fen"])
@@ -58,6 +67,7 @@ class PrecomputedChessDataset(Dataset):
         return x, y
     
 class ChessValueNet(nn.Module):
+    @app.function() # Outsource to Modal
     def __init__(self):
         super().__init__()
         self.conv = nn.Sequential(
@@ -72,11 +82,13 @@ class ChessValueNet(nn.Module):
             nn.ReLU(),
             nn.Linear(256, 1)
         )
+    @app.function() # Outsource to Modal
     def forward(self, x):
         x = self.conv(x)
         x = self.fc(x)
         return x
 
+@app.function() # Outsource to Modal
 def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
     ds = PrecomputedChessDataset(file_path)
     dl = DataLoader(ds, batch_size=batch_size, shuffle=True)
@@ -103,5 +115,6 @@ def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
 
     torch.save(model.state_dict(), model_path)
 
-if __name__ == "__main__":
-    train(batch_size=32)
+@app.local_entrypoint() # Modal entrypoint
+def main():
+    train(batch_size=32).map(25)
