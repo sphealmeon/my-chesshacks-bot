@@ -1,42 +1,79 @@
 import json
+import subprocess
 from datasets import load_dataset
 from stockfish import Stockfish
 import os
 import numpy as np
+import chess
 
-from weightCalc import weight
 from gameAnalysis import identifyGame
+import shlex
+import multiprocessing as mp
 
-# import modal
-# image = image = modal.Image.debian_slim().pip_install(open("../requirements.txt", "r").read().split('\n'))
-# app = modal.App("chesshacks-precompute", image=image)
 
-# # @app.function() # Outsource to Modal
-# def load_stockfish():
-#     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#     stockfish_path = os.path.join(project_root, "engines", "stockfish")
-#     if not os.path.exists(stockfish_path):
-#         raise FileNotFoundError(f"Stockfish not found at {stockfish_path}")
-#     sf = Stockfish(stockfish_path)
-#     sf.update_engine_parameters({"MultiPV": 1})
-#     return sf
 
-# # @app.function() # Outsource to Modal
-# def get_best_centipawn(fen, sf):
-#     sf.set_fen_position(fen)
-#     result = sf.get_top_moves(1)
-#     if not result or result[0]["Centipawn"] is None:
-#         return 0
-#     cp = result[0]["Centipawn"]
-#     if abs(cp) > 10000:
-#         cp = 10000 * np.sign(cp)
-#     return cp
+STOCKFISH_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..",
+    "engines",
+    "stockfish"
+)
 
-# Precompute and save to reduce stockfish calls
-# @app.function() # Outsource to Modal
+# Depth per Stockfish worker evaluation
+DEPTH = 8   # or whatever depth you want
+
+# Number of FENs to precompute 
+FEN_LIMIT = 5000000   # adjust as needed
+
+# Output file for the results
+OUT_PATH = "precomputed_stockfish.jsonl"
+
+# Size of chunks passed to pool.imap
+CHUNKSIZE = 50
+
+# Global Stockfish handle for each worker
+SF = None
+
+
+
+# Weight formula/algorithm for best move
+def weight(fen: str, gameStatus: str) -> int:
+
+    global SF
+
+    board = chess.Board(fen) # To store moves and interact with
+    SF.set_fen_position(fen)
+
+    bestMoveInfo = SF.get_top_moves(1)[0] # Dict of info about best move according to Stockfish
+    bestMove = chess.Move.from_uci(bestMoveInfo["Move"])
+    cpInitial = bestMoveInfo["Centipawn"]
+    if bestMoveInfo["Mate"]:
+        return 1 # Maximize weight if move proceeds to checkmate
+
+    board.push(bestMove) # Update board with best move
+    SF.set_fen_position(board.fen()) # Update SF's board
+    cpFinal = SF.get_top_moves(1)[0]["Centipawn"] # New centipawn
+    if cpFinal == None:
+        cpFinal = 0 # Must be stalemate
+
+    playerToMove = fen.split(" ")[1] # "w" or "b" from original board state
+    if playerToMove == "w": # Difference in centipawn depends on who the move was made for
+        cp = cpFinal - cpInitial
+    else:
+        cp = cpInitial - cpFinal
+
+    # Tuning values based on game status (EXPERIMENTAL)
+    if gameStatus == "opening":
+        cp *= 1.3
+    elif gameStatus == "endgame":
+        cp *= 1.15
+
+    cp = np.clip(cp, -1000, 1000) / 1000.0 # Normalize centipawn value to dodge outliers
+
+    return cp # Weight should be given based on quality of best move (i.e., centipawn difference)
+
 def precompute(output_file="precomputed.jsonl", max_rows=5000):
-    dataset = load_dataset("bonna46/Chess-FEN-and-NL-Format-30K-Dataset", split="train", streaming=True)
-    # sf = load_stockfish()
+    dataset = load_dataset("jrahn/yolochess_lichess-elite_2211", split="train", streaming=True)
     
     count = 0
     with open(output_file, "w") as f:
@@ -44,7 +81,7 @@ def precompute(output_file="precomputed.jsonl", max_rows=5000):
             fen = row["fen"]
             gameStatus = identifyGame(fen)
             cp = weight(fen, gameStatus)
-            json_line = json.dumps({"fen": fen, "cp": cp, "gameStatus": gameStatus})
+            json_line = json.dumps({"fen": fen, "cp": cp})
             f.write(json_line + "\n")
             
             count += 1
@@ -162,7 +199,7 @@ def main():
     # set spawn (required on macOS)
     mp.set_start_method("spawn", force=True)
 
-    num_workers = 4 # max(1, mp.cpu_count())
+    num_workers = max(1, mp.cpu_count())
     print("Using spawn start method.")
     print(f"Using {num_workers} workers. Writing to {OUT_PATH}")
 

@@ -14,7 +14,6 @@ import ijson
 # image = image = modal.Image.debian_slim().pip_install(open("../requirements.txt", "r").read().split('\n'))
 # app = modal.App("chesshacks-training", image=image)
 
-# @app.function() # Outsource to Modal
 def fen_to_tensor(fen_string):
     parts = fen_string.split(' ')
     piece_placement, active_color, castling_rights = parts[0], parts[1], parts[2]
@@ -45,29 +44,24 @@ def fen_to_tensor(fen_string):
     return tensor
 
 class PrecomputedChessDataset(Dataset):
-    # @app.function() # Outsource to Modal
     def __init__(self, file_path="precomputed.jsonl"):
         self.data = []
-        with open(path) as f:
+        with open(file_path) as f:
             for line in f:
                 self.data.append(json.loads(line))
 
-    # @app.function() # Outsource to Modal
     def __len__(self):
         return len(self.data)
 
-    # @app.function() # Outsource to Modal
     def __getitem__(self, idx):
         row = self.data[idx]
         x = fen_to_tensor(row["fen"])
         y = row["cp"]
-        gameStatus = row["gameStatus"]
         x = torch.tensor(x, dtype=torch.float32)
         y = torch.tensor(y, dtype=torch.float32).unsqueeze(-1)
         return x, y
     
 class ChessValueNet(nn.Module):
-    # @app.function() # Outsource to Modal
     def __init__(self):
         super().__init__()
         self.conv = nn.Sequential(
@@ -82,21 +76,18 @@ class ChessValueNet(nn.Module):
             nn.ReLU(),
             nn.Linear(256, 1)
         )
-    # @app.function() # Outsource to Modal
     def forward(self, x):
         x = self.conv(x)
         x = self.fc(x)
         return x
 
-# @app.function() # Outsource to Modal
 def train(file_path="precomputed.jsonl", batch_size=32, epochs=1):
     ds = PrecomputedChessDataset(file_path)
     dl = DataLoader(ds, batch_size=batch_size, shuffle=True)
 
     model = ChessValueNet()
     opt = torch.optim.Adam(model.parameters(), lr=1e-4)
-    # MODIFY OPT HERE
-    loss_fn = nn.MarginRankingLoss() # Changed to margin ranking to rank moves
+    loss_fn = nn.MSELoss()
 
     for epoch in range(epochs):
         for step, (x, y) in enumerate(dl):
